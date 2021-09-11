@@ -24,6 +24,14 @@ const Banco = () => {
     setSelectedValue('');
   }
 
+  const alerta = () => {
+    if(nome && idade > 0 ){
+      alert("Parabéns!\nSua conta foi criada com sucesso!\n\nNome: " + nome + "\nIdade: " + idade + "\nGênero: " + selectedValue + "\nLimite: R$ " + limite)
+    }else{
+      alert("Insira os dados corretamente!")
+    }
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>L8 Bank</Text>
@@ -67,7 +75,7 @@ const Banco = () => {
       </View>
       <MyButton
             texto="Abrir Conta!"
-            onPress={() => alert("Parabéns!\nSua conta foi criada com sucesso!\n\nNome: " + nome + "\nIdade: " + idade + "\nGênero: " + selectedValue + "\nLimite: R$ " + limite)}
+            onPress={alerta}
             color={colors.yellow}>
       </MyButton>
       <MyButton
